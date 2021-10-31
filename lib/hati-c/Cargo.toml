@@ -1,0 +1,10 @@
+[package]
+name = "hati-c"
+version = "0.1.0"
+edition = "2021"
+
+[build]
+build = "build.rs"
+
+[build-dependencies]
+cc = "1.0"
