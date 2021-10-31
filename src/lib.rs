@@ -22,10 +22,7 @@ impl Component for Hello {
   }
 
   fn view(&self) -> Html {
-		match hati::hello_world() {
-			Ok(msg) => html! { <span>{msg}</span> },
-			Err(error) => html! { <span>{error}</span> }
-		}
+		html! { <span>{hati::hello_world()}</span> }
   }
 }
 
