@@ -1,3 +1,5 @@
+use hati;
+
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
@@ -20,7 +22,10 @@ impl Component for Hello {
   }
 
   fn view(&self) -> Html {
-    html! { <span>{"Hello World!"}</span> }
+		match hati::hello_world() {
+			Ok(msg) => html! { <span>{msg}</span> },
+			Err(error) => html! { <span>{error}</span> }
+		}
   }
 }
 
