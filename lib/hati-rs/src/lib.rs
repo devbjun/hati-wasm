@@ -1,8 +1,5 @@
-use hati_c as ffi;
+use hati_js;
 
-use std::ffi::CStr;
-use std::str::Utf8Error;
-
-pub fn hello_world() -> Result<&'static str, Utf8Error> {
-  unsafe { CStr::from_ptr(ffi::hello_world()) }.to_str()
+pub fn hello_world() -> String {
+  hati_js::hello_world()
 }
